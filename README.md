@@ -1,49 +1,49 @@
-# Coffee Shop Backend
+# Casting Agency
 
-## Getting Started
+## Backend API and Postgres database are hosted in Heroku
 
-### Installing Dependencies
+### Heroku API URL: https://castingya.herokuapp.com
 
-#### Python 3.7
+## The frontend application that connects to Heroku is in development mode and runs loacally
 
-Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+### Two roles with specific permissions are used: Producer and Director
 
-#### Virtual Enviornment
+Sample accounts for each role have been created and provided or can be provided in private message
 
-We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organaized. Instructions for setting up a virual enviornment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+### Frontend application depencies: Node and NPM: from https://nodejs.com/en/download
 
-#### PIP Dependencies
-
-Once you have your virtual environment setup and running, install dependencies by naviging to the `/backend` directory and running:
+within the frontend directory in your terminal, run:
 
 ```bash
-pip install -r requirements.txt
+npm install
 ```
-
-This will install all of the required packages we selected within the `requirements.txt` file.
-
-##### Key Dependencies
-
-- [Flask](http://flask.pocoo.org/)  is a lightweight backend microservices framework. Flask is required to handle requests and responses.
-
-- [SQLAlchemy](https://www.sqlalchemy.org/) and [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) are libraries to handle the lightweight sqlite database. Since we want you to focus on auth, we handle the heavy lift for you in `./src/database/models.py`. We recommend skimming this code first so you know how to interface with the Drink model.
-
-- [jose](https://python-jose.readthedocs.io/en/latest/) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
-
-## Running the server
-
-From within the `./src` directory first ensure you are working using your created virtual environment.
-
-Each time you open a new terminal session, run:
+and then:
 
 ```bash
-export FLASK_APP=app.py;
+npm start
 ```
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser
 
-To run the server, execute:
+## Casting Agency Specifications
 
-```bash
-flask run --reload
-```
+* The Casting Agency is responsible for creating movies and managing and assigning actors to those movies.
 
-The `--reload` flag will detect file changes and restart the server automatically.
+* Models:
+
+  * Movies with attributes title and release date
+  * Actors with attributes name, age and gender
+* Endpoints:
+  * GET /actors and /movies
+  * DELETE /actors/ and /movies/
+  * POST /actors and /movies and
+  * PATCH /actors/ and /movies/
+* Roles:
+  * Everyone
+    * Can view actors and movies
+  * Casting Director
+    * All permissions a everyone has and…
+    * Add or delete an actor from the database
+    * Modify actors or movies
+  * Executive Producer
+    * All permissions a Casting Director has and…
+    * Add or delete a movie from the database
