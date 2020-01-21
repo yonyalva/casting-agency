@@ -10,6 +10,8 @@
 
 Sample accounts for each role have been created and provided or can be provided in private message
 
+*** if needed, the JWT tokens can be found while the user is logged, under Chrome Developers Tools > Application > Local Storage
+
 ### Frontend application depencies: Node and NPM: from https://nodejs.com/en/download
 
 within the frontend directory in your terminal, run:
